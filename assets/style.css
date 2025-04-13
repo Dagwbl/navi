@@ -1,0 +1,265 @@
+.hidden {
+    opacity: 0;
+    transform: translateY(-60px);
+    /* 让 header 上移消失，footer 下移消失 */
+    pointer-events: none;
+    /* 禁止交互 */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+header,
+footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+:root {
+    overflow-x: auto;
+    overflow-y: auto;
+    overflow: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 和 Edge */
+}
+
+:root::-webkit-scrollbar {
+    display: none;
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--theme);
+    color: var(--primary);
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - var(--header-height));
+}
+
+/* 左侧导航 */
+.left-nav {
+    width: 180px;
+    overflow: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 和 Edge */
+    padding: 0px;
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out;
+    position: relative;
+}
+
+.left-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.left-nav.collapsed {
+    width: 50px;
+    opacity: 0.6;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* 半透明背景 */
+    backdrop-filter: blur(1000px);
+}
+
+.left-nav.collapsed:hover {
+    opacity: 0.9;
+}
+
+.nav-toggle {
+    width: 24px;
+    height: 24px;
+    font-family: 'Material Icons';
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transform: translateX(155px);
+    opacity: 0.8;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.collapsed .nav-toggle {
+    transform: translateX(0);
+    font-family: 'Material Icons';
+}
+
+.nav-group {
+    margin-bottom: 2px;
+}
+
+.nav-title {
+    padding: 2px 4px 0px 4px;
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.collapsed .nav-title {
+    text-align: center;
+    font-size: 10px;
+}
+
+.nav-item {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 3px 6px;
+    font-size: 14px;
+}
+
+.nav-item-wrapper {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    min-height: 30px;
+    padding: 1px 2px;
+}
+
+.nav-item-wrapper:hover {
+    background: linear-gradient(to left, transparent, #60708b3d);
+    border-radius: 4px;
+}
+
+.nav-item span.icon,
+.nav-item-wrapper img {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    margin-left: 5px;
+}
+
+.nav-item span.icon {
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.collapsed .nav-item-wrapper img,
+.collapsed .nav-item span.icon {
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+.nav-item-wrapper a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.external-link {
+    font-size: 12px;
+    text-decoration: none;
+    padding: 0 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.collapsed .external-link {
+    display: none;
+}
+
+.collapsed .nav-item span:not(.icon) {
+    display: none;
+}
+
+.nav-item-wrapper:hover .external-link {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.nav-item-wrapper.active {
+    background: linear-gradient(to left, transparent, #75d4fc7d);
+    border-radius: 4px;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.content-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+    border-radius: 4px;
+}
+
+/* 移动端样式 */
+@media (max-width: 768px) {
+    .nav {
+        position: relative;
+    }
+
+    .left-nav {
+        position: absolute;
+        /* 改为绝对定位 */
+        top: 0;
+        /* 粘附于顶部 */
+        left: 0;
+        /* 粘附于左边 */
+        /* height: calc(100% - var(--header-height)); */
+        height: 100%;
+        z-index: 1000;
+        transform: translateX(0px) translateY(0%);
+        /* 保持偏移量 */
+        overflow-y: auto;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE 和 Edge */
+        transition: transform 0.3s ease;
+        font-family: 'Material Icons';
+        background: #f5f5f5;
+    }
+
+    .left-nav.collapsed {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        /* background: none;*/
+        width: 23px;
+        height: 23px;
+        overflow: hidden;
+    }
+
+    .left-nav.collapsed .nav-group {
+        display: none;
+    }
+
+    .left-nav.collapsed .nav-toggle {
+        display: block;
+        transform: translateX(0);
+        font-family: 'Material Icons';
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+}

@@ -1,0 +1,167 @@
+[
+  {
+    "category": "FOR ME",
+    "items": [
+      {
+        "name": "One Diary",
+        "icon": "📅",
+        "weight": 1,
+        "link": "https://web.xianfengtech.cn/web2/#/record"
+      },
+      {
+        "name": "Multiple Search",
+        "icon": "🔍",
+        "weight": 0,
+        "link": "/utils/multiple-search/"
+      },
+      {
+        "name": "Pomodoro",
+        "icon": "🍅",
+        "weight": 3,
+        "link": "/utils/tomodoro/"
+      }
+    ]
+  },
+  {
+    "category": "AI",
+    "items": [
+      {
+        "name": "DeepSeek",
+        "icon": "🐳",
+        "weight": 9,
+        "refused": true,
+        "link": "https://chat.deepseek.com/"
+      },
+      {
+        "name": "Metaso",
+        "link": "https://metaso.cn/",
+        "weight": 10
+      },
+      {
+        "name": "Claude 3.7",
+        "weight": 11,
+        "link": "https://poe.com/Claude-3.7-Sonnet",
+        "refused": true
+      },
+      {
+        "name": "ChatGPT",
+        "weight": 12,
+        "link": "https://chatgpt.com/",
+        "refused": true
+      },
+      {
+        "name": "Gemini 2",
+        "icon": "🦋",
+        "weight": 12,
+        "link": "https://gemini.google.com/",
+        "refused": true
+      },
+      {
+        "name": "LMArena",
+        "icon": "🏟️",
+        "weight": 13,
+        "link": "https://lmarena.ai/?model=grok-3",
+        "refused": true
+      },
+      {
+        "name": "Chatbox",
+        "weight": 99,
+        "link": "https://web.chatboxai.app/"
+      }
+    ]
+  },
+  {
+    "category": "Social",
+    "items": [
+      {
+        "name": "V2EX",
+        "weight": 4,
+        "link": "https://www.v2ex.com/",
+        "refused": true
+      },
+      {
+        "name": "Chongbuluo",
+        "weight": 3,
+        "link": "https://chongbuluo.com/",
+        "refused": true
+      },
+      {
+        "name": "Follow",
+        "weight": 2,
+        "link": "https://app.follow.is/timeline/view-0/all/pending",
+        "refused": true
+      }
+    ]
+  },
+  {
+    "category": "Tool",
+    "items": [
+      {
+        "name": "MathDF",
+        "weight": 5,
+        "link": "https://mathdf.com/cn/",
+        "refused": true
+      },
+      {
+        "name": "Scholar",
+        "weight": 1,
+        "icon": "📚",
+        "link": "https://ac.scmor.com/"
+      },
+      {
+        "name": "Calculator",
+        "weight": 96,
+        "link": "https://www.lddgo.net/math/calculator"
+      },
+      {
+        "name": "Toolbox",
+        "weight": 98,
+        "link": "https://tool.lvtao.net/json"
+      },
+      {
+        "name": "Visual Studio Code",
+        "weight": 99,
+        "icon": "👨🏻‍💻",
+        "refused": true,
+        "link": "https://vscode.dev/github/Dagwbl/dagwbl.github.io"
+      }
+    ]
+  },
+  {
+    "category": "Relax",
+    "items": [
+      {
+        "name": "Method of Action",
+        "weight": 2,
+        "link": "https://method.ac/"
+      },
+      {
+        "name": "Word Search",
+        "weight": 14,
+        "link": "https://www.thewordfinder.com/word-search-puzzles/"
+      },
+      {
+        "name": "Daily Anagram",
+        "weight": 15,
+        "link": "https://www.thewordfinder.com/daily-anagram/"
+      },
+      {
+        "name": "MineSweeper",
+        "weight": 3,
+        "icon": "💣",
+        "link": "/utils/minesweeper/"
+      }
+    ]
+  },
+  {
+    "category": "Links",
+    "items": [
+      {
+        "name": "Method of Action",
+        "weight": 2,
+        "link": "https://method.ac/"
+      }
+      
+    ]
+  }
+]
